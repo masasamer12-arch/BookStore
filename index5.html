@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="c.css">
+    <!-- Tailwind Config for Dark Mode -->
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Header Section -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md shadow-md transition-colors duration-300">
+        <div class="container mx-auto px-4 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="logo w-32 md:w-40">
+                <img src="image/logo.png" alt="Book Store Logo" class="w-full h-auto object-contain">
+            </div>
+
+            <!-- Navigation -->
+            <nav id="navbar" class="hidden absolute top-full left-0 w-full bg-white dark:bg-gray-800 shadow-lg lg:shadow-none lg:bg-transparent lg:dark:bg-transparent lg:static lg:flex lg:w-auto flex-col lg:flex-row gap-6 p-6 lg:p-0 font-semibold text-lg transition-all z-40 text-center lg:text-left">
+                <a href="#home" class="hover:text-cyan-500 transition">Home</a>
+                <a href="#about" class="hover:text-cyan-500 transition">About</a>
+                <a href="#featured" class="hover:text-cyan-500 transition">Featured</a>
+                <a href="#arrivals" class="hover:text-cyan-500 transition">Arrivals</a>
+                <a href="#reviews" class="hover:text-cyan-500 transition">Reviews</a>
+                <a href="#blog" class="hover:text-cyan-500 transition">Blog</a>
+            </nav>
+
+            <!-- Icons -->
+            <div class="flex items-center gap-4 lg:gap-6 text-xl">
+                <a href="#" class="hover:text-cyan-500 transition"><i class="fas fa-search"></i></a>
+                <a href="#" class="hover:text-cyan-500 transition"><i class="fas fa-heart"></i></a>
+                <button id="themeToggle" class="hover:text-cyan-500 transition" aria-label="Toggle Dark Mode">🌙</button>
+                <button id="menuToggle" class="lg:hidden hover:text-cyan-500 transition" aria-label="Toggle Navigation">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12" id="home">
+        <div class="lg:w-1/2 text-center lg:text-left space-y-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 dark:text-white">
+                WELCOME TO<br><span class="text-cyan-500">BOOK STORE</span>
+            </h1>
+            <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda molestias atque laborum non fuga ex deserunt. Exercitationem velit ducimus praesentium, obcaecati hic voluptate id tenetur fuga illum quidem omnis? Rerum?
+            </p>
+            <button class="btn mt-4">Learn More</button>
+        </div>
+        <div class="lg:w-1/2 flex justify-center">
+            <img src="image/table.png" alt="Book Display" class="w-full max-w-md lg:max-w-full drop-shadow-2xl">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-gray-50 dark:bg-gray-800/50 py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="feature-card">
+                <div class="text-cyan-500 text-4xl mb-4"><i class="fas fa-truck"></i></div>
+                <h3 class="text-xl font-bold mb-2">Fast Delivery</h3>
+                <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="text-cyan-500 text-4xl mb-4"><i class="fas fa-users"></i></div>
+                <h3 class="text-xl font-bold mb-2">24 x 7 Services</h3>
+                <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="text-cyan-500 text-4xl mb-4"><i class="fas fa-tag"></i></div>
+                <h3 class="text-xl font-bold mb-2">Best Deal</h3>
+                <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div class="feature-card">
+                <div class="text-cyan-500 text-4xl mb-4"><i class="fas fa-lock"></i></div>
+                <h3 class="text-xl font-bold mb-2">Secure Payment</h3>
+                <p class="text-gray-500 dark:text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12" id="about">
+        <div class="lg:w-1/2">
+            <img src="image/about.png" alt="About Us" class="w-full rounded-2xl shadow-xl">
+        </div>
+        <div class="lg:w-1/2 space-y-6 text-center lg:text-left">
+            <h2 class="section-title text-left lg:text-left mb-6">About Us</h2>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ducimus repudiandae dignissimos molestias magni. Doloremque, quaerat illo excepturi fugit aspernatur nobis quam mollitia adipisci. Mollitia repellat illum doloremque illo rem alias pariatur incidunt dolorem laudantium blanditiis dolorum veniam perferendis similique.
+            </p>
+            <button class="btn">Read More</button>
+        </div>
+    </section>
+
+    <!-- Featured Books Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800/30" id="featured">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Featured Books</h2>
+            <!-- Horizontal Scroll Carousel -->
+            <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scroll">
+                <!-- Books 1 to 10 -->
+                <div class="book-card min-w-[250px] snap-center">
+                    <img src="image/book_1.jpg" alt="Book 1" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h4 class="font-bold text-lg">Featured Books</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p>
+                    <p class="text-xs text-cyan-500 mb-3">Thriller, Horror, Romance</p>
+                    <p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p>
+                    <button class="btn w-full py-2">Learn More</button>
+                </div>
+                <div class="book-card min-w-[250px] snap-center">
+                    <img src="image/book_2.jpg" alt="Book 2" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h4 class="font-bold text-lg">Featured Books</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p>
+                    <p class="text-xs text-cyan-500 mb-3">Thriller, Horror, Romance</p>
+                    <p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p>
+                    <button class="btn w-full py-2">Learn More</button>
+                </div>
+                <div class="book-card min-w-[250px] snap-center">
+                    <img src="image/book_3.jpg" alt="Book 3" class="w-full h-64 object-cover rounded-lg mb-4">
+                    <h4 class="font-bold text-lg">Featured Books</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p>
+                    <p class="text-xs text-cyan-500 mb-3">Thriller, Horror, Romance</p>
+                    <p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p>
+                    <button class="btn w-full py-2">Learn More</button>
+                </div>
+                <!-- Repeat for rest of books -->
+                <div class="book-card min-w-[250px] snap-center"><img src="image/book_4.jpg" alt="Book 4" class="w-full h-64 object-cover rounded-lg mb-4"><h4 class="font-bold text-lg">Featured Books</h4><p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p><p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p><button class="btn w-full py-2">Learn More</button></div>
+                <div class="book-card min-w-[250px] snap-center"><img src="image/book_5.jpg" alt="Book 5" class="w-full h-64 object-cover rounded-lg mb-4"><h4 class="font-bold text-lg">Featured Books</h4><p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p><p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p><button class="btn w-full py-2">Learn More</button></div>
+                <div class="book-card min-w-[250px] snap-center"><img src="image/book_6.jpg" alt="Book 6" class="w-full h-64 object-cover rounded-lg mb-4"><h4 class="font-bold text-lg">Featured Books</h4><p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p><p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p><button class="btn w-full py-2">Learn More</button></div>
+                <div class="book-card min-w-[250px] snap-center"><img src="image/book_7.png" alt="Book 7" class="w-full h-64 object-cover rounded-lg mb-4"><h4 class="font-bold text-lg">Featured Books</h4><p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p><p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p><button class="btn w-full py-2">Learn More</button></div>
+                <div class="book-card min-w-[250px] snap-center"><img src="image/book_8.png" alt="Book 8" class="w-full h-64 object-cover rounded-lg mb-4"><h4 class="font-bold text-lg">Featured Books</h4><p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p><p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p><button class="btn w-full py-2">Learn More</button></div>
+                <div class="book-card min-w-[250px] snap-center"><img src="image/book_9.jpg" alt="Book 9" class="w-full h-64 object-cover rounded-lg mb-4"><h4 class="font-bold text-lg">Featured Books</h4><p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p><p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p><button class="btn w-full py-2">Learn More</button></div>
+                <div class="book-card min-w-[250px] snap-center"><img src="image/book_10.png" alt="Book 10" class="w-full h-64 object-cover rounded-lg mb-4"><h4 class="font-bold text-lg">Featured Books</h4><p class="text-gray-500 dark:text-gray-400 text-sm mb-1">John Deo</p><p class="font-bold text-lg mb-4">$25.50 <del class="text-gray-400 text-sm ml-2">$28.60</del></p><button class="btn w-full py-2">Learn More</button></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="py-16 container mx-auto px-4" id="arrivals">
+        <h2 class="section-title">New Arrivals</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <!-- 10 Arrivals -->
+            <div class="arrival-card"><img src="image/arrival_1.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_2.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_3.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_4.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_5.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_6.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_7.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_8.webp" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_9.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+            <div class="arrival-card"><img src="image/arrival_10.jpg" alt="New Book" class="w-full h-48 object-cover rounded mb-3"><div class="text-yellow-400 text-sm mb-2">★★★★★</div><button class="btn w-full py-2 text-sm">Learn More</button></div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800/30" id="reviews">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Review 1 -->
+                <div class="review-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="image/review_1.png" alt="Reviewer" class="w-16 h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-lg">John Doe</h4>
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate exercitationem quis molestias neque ratione.</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="review-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="image/review_2.png" alt="Reviewer" class="w-16 h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-lg">John Doe</h4>
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate exercitationem quis molestias neque ratione.</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="review-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="image/review_3.png" alt="Reviewer" class="w-16 h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-lg">John Doe</h4>
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate exercitationem quis molestias neque ratione.</p>
+                </div>
+                <!-- Review 4 -->
+                <div class="review-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="image/review_4.png" alt="Reviewer" class="w-16 h-16 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-lg">John Doe</h4>
+                            <div class="text-yellow-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate exercitationem quis molestias neque ratione.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Banner -->
+    <section class="relative w-full h-64 md:h-96 lg:h-[500px] flex items-center bg-gray-900 overflow-hidden">
+        <img src="image/banner.jpg" alt="Digital Banner" class="absolute inset-0 w-full h-full object-cover opacity-60">
+        <div class="relative z-10 container mx-auto px-4 lg:px-12">
+           
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-16 container mx-auto px-4" id="blog">
+        <h2 class="section-title">Our Blog</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Blog 1 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700">
+                <img src="image/blog_1.jpg" alt="Blog Post" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h4 class="text-cyan-500 font-bold mb-2">Blogger</h4>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Lorem ipsum dolor sit</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laudantium voluptatibus error quidem expedita voluptatem ipsum facere veritatis.</p>
+                    <button class="btn w-full py-2">Read More</button>
+                </div>
+            </div>
+            <!-- Blog 2 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700">
+                <img src="image/blog_2.jpg" alt="Blog Post" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h4 class="text-cyan-500 font-bold mb-2">Blogger</h4>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Lorem ipsum dolor sit</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laudantium voluptatibus error quidem expedita voluptatem ipsum facere veritatis.</p>
+                    <button class="btn w-full py-2">Read More</button>
+                </div>
+            </div>
+            <!-- Blog 3 -->
+            <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700">
+                <img src="image/blog_3.jpg" alt="Blog Post" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h4 class="text-cyan-500 font-bold mb-2">Blogger</h4>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">Lorem ipsum dolor sit</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure laudantium voluptatibus error quidem expedita voluptatem ipsum facere veritatis.</p>
+                    <button class="btn w-full py-2">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <!-- Company Info -->
+            <div class="space-y-4">
+                <img src="image/logo.png" alt="Book Store Logo" class="w-32 bg-white p-2 rounded">
+                <p class="text-sm leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat ipsa aspernatur ad sequi dolore eveniet vitae quasi.</p>
+                <p class="text-sm font-bold text-white mt-4 block lg:hidden">Design By <span class="text-cyan-500">MIT Master Code</span></p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Quick Link</h3>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="hover:text-cyan-500 transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-cyan-500 transition">About</a></li>
+                    <li><a href="#featured" class="hover:text-cyan-500 transition">Featured</a></li>
+                    <li><a href="#arrivals" class="hover:text-cyan-500 transition">Arrivals</a></li>
+                    <li><a href="#reviews" class="hover:text-cyan-500 transition">Reviews</a></li>
+                    <li><a href="#blog" class="hover:text-cyan-500 transition">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Contact Info</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3"><i class="fas fa-phone text-cyan-500"></i> +94 12 345 6789</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-phone text-cyan-500"></i> +94 32 444 699</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-envelope text-cyan-500"></i> bookstore123@gmail.com</li>
+                </ul>
+                <h3 class="text-white text-xl font-bold mt-8 mb-4">Follow Us</h3>
+                <div class="flex gap-4 text-xl">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-cyan-500 hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Newsletter</h3>
+                <form class="flex flex-col gap-3">
+                    <input type="email" placeholder="Your email here" class="p-3 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-cyan-500 w-full">
+                    <button type="button" class="btn w-full">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-gray-800 text-center pt-8">
+            <p>Design By <span class="text-cyan-500 font-bold">Masa Mahmoud</span></p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="s.js"></script>
+</body>
+</html>
